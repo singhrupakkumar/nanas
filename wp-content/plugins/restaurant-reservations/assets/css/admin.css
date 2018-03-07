@@ -1,0 +1,673 @@
+/* CSS Stylesheet for the admin interface for Restaurant Reservations */
+
+.clearfix:before,
+.clearfix:after { /* thanks bootstrap */
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+/* Bookings Admin List Table */
+#rtb-bookings-table .rtb-primary-controls {
+	margin-top: 2em;
+}
+
+#rtb-bookings-table .subsubsub {
+	float: none;
+	margin: 0.5em 0 1em;
+	text-align: left;
+}
+
+#rtb-bookings-table  .subsubsub .trash a {
+	color: #a00;
+}
+
+#rtb-bookings-table  .subsubsub .trash a:hover {
+	color: red;
+}
+
+#rtb-filters {
+	position: relative;
+}
+
+#rtb-filters .date-filters {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+	display: inline-block;
+	padding: 1em;
+	background: #fff;
+	-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+}
+
+#rtb-filters.date-filters-visible .date-filters {
+	position: relative;
+	top: auto;
+	left: 0;
+}
+
+#rtb-filters .date-filters .datepicker {
+	max-width: 10em;
+}
+
+#rtb-filters .date-filter-range {
+	padding: 0.25em;
+}
+
+#rtb-date-filter-link {
+	position: relative;
+}
+
+#rtb-date-filter-link .dashicons {
+	line-height: 1.5;
+}
+
+#rtb-filters .date-filter-range + #rtb-date-filter-link {
+	margin-left: 0.5em;
+}
+
+#rtb-date-filter-link .rtb-date-filter-label {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+
+#rtb-filters.date-filters-visible #rtb-date-filter-link {
+	color: #777;
+}
+
+#rtb-filters.date-filters-visible #rtb-date-filter-link:before {
+	content: '';
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	margin-left: -1em;
+	width: 0;
+	height: 0;
+	border: 1em solid transparent;
+	border-bottom: 1em solid #fff;
+}
+
+#rtb-filters .current {
+	font-weight: 600;
+	color: #000;
+}
+
+#rtb-bookings-table .tablenav .actions .button {
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+#rtb-bookings-table .tablenav .actions .button .dashicons {
+	line-height: 28px;
+}
+
+#rtb-bookings-table .rtb-notice,
+#rtb-bookings-table .rtb-top-actions-wrapper,
+#rtb-bookings-table .rtb-table-header-controls {
+	margin: 1em 0;
+}
+
+#rtb-bookings-table .rtb-table-header-controls {
+	margin-bottom: 0;
+}
+
+#rtb-bookings-table .rtb-notice {
+	padding: 1em;
+	background: #2ea2cc;
+	color: #fff;
+}
+
+#rtb-bookings-table .rtb-table-header-controls {
+	position: relative;
+	top: 1px;
+	overflow: hidden;
+	margin-bottom: 0.5em;
+}
+
+#rtb-bookings-table select[name="action"],
+#rtb-bookings-table select[name="action2"],
+#rtb-bookings-table .rtb-location-switch select {
+	max-width: 120px;
+}
+
+#rtb-bookings-table .rtb-table-header-controls .bulkactions {
+	float: left;
+}
+
+#rtb-bookings-table .rtb-locations {
+	display: none;
+	margin: 0;
+	width: 9999px;
+}
+
+#rtb-bookings-table .rtb-locations li {
+	display: inline-block;
+	margin: 0;
+	line-height: 38px;
+	position: relative;
+}
+
+#rtb-bookings-table .rtb-locations a {
+	display: block;
+	padding: 0 1em;
+	font-weight: 700;
+	color: #777;
+	text-decoration: none;
+}
+
+#rtb-bookings-table .rtb-locations .current a {
+	background: #fff;
+	color: #333;
+	border: 1px solid #ddd;
+	border-bottom: 0;
+}
+
+#rtb-bookings-table .rtb-location-switch {
+	float: left;
+}
+
+#rtb-bookings-table .rtb-locations-button {
+	margin-bottom: 0;
+}
+
+#rtb-bookings-table tr.closed {
+	opacity: 0.6;
+	filter: opacity(alpha=60);
+}
+#rtb-bookings-table tr.closed:hover {
+	opacity: 1;
+	filter: opacity(alpha=100);
+}
+
+#rtb-bookings-table tr.pending .check-column {
+	border-left: 4px solid #dd3d36;
+}
+
+#rtb-bookings-table tr.pending .check-column input[type=checkbox] {
+	margin-left: 4px;
+}
+
+#rtb-bookings-table th#date {
+	width: auto;
+}
+
+#rtb-bookings-table th#party {
+	width: 3em;
+}
+
+#rtb-bookings-table th#details {
+	width: 4em;
+}
+
+#rtb-bookings-table td .actions {
+	line-height: 28px;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s 0;
+	-moz-transition: opacity 0.3s 0;
+	transition: opacity 0.3s 0;
+}
+
+#rtb-bookings-table tr:hover td .actions {
+	opacity: 1;
+}
+
+#rtb-bookings-table .column-date .actions .trash {
+	color: #a00;
+}
+
+#rtb-bookings-table .column-date .actions .trash:hover {
+	color: red;
+}
+
+#rtb-bookings-table .column-date .status {
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	line-height: 28px;
+	opacity: 0;
+	-webkit-transition: opacity 0.6s 0;
+	-moz-transition: opacity 0.6s 0;
+	transition: opacity 0.6s 0;
+}
+
+#rtb-bookings-table .column-date .status .spinner {
+	visibility: visible;
+	display: inline-block;
+	float: left;
+	margin: 4px 4px 0 0;
+	vertical-align: middle;
+}
+
+#rtb-bookings-table .column-date.loading .actions {
+	display: none;
+}
+
+#rtb-bookings-table .column-date.loading .status {
+	width: auto;
+	height: auto;
+	overflow: visible;
+	opacity: 0.5;
+}
+
+#rtb-bookings-table tr ul {
+	margin: 0;
+}
+
+.rtb-details-data {
+	display: none;
+}
+
+.rtb-details-data .details {
+	margin: 0;
+}
+
+.rtb-details-data .details > li {
+	margin-top: 2em;
+}
+
+.rtb-details-data .details > li:first-child {
+	margin-top: 0;
+}
+
+.rtb-details-data .details .label {
+	font-weight: 900;
+}
+
+#rtb-details-modal .rtb-details-data {
+	display: block;
+}
+
+@media screen and (min-width: 783px) {
+
+	#rtb-bookings-table .rtb-locations li {
+		line-height: 32px;
+	}
+}
+
+@media screen and (min-width: 930px) {
+
+	#rtb-bookings-table .rtb-primary-controls {
+		margin-top: 0;
+	}
+
+	#rtb-bookings-table .rtb-views {
+		float: right;
+		width: 50%;
+	}
+
+	#rtb-bookings-table .rtb-views .subsubsub {
+		text-align: right;
+	}
+
+	#rtb-filters {
+		float: left;
+		width: 50%;
+	}
+
+	#rtb-filters .date-filters {
+		margin-right: 2em;
+	}
+
+	#rtb-bookings-table .rtb-locations {
+		display: block;
+	}
+
+	#rtb-bookings-table .rtb-table-header-controls {
+		margin-bottom: 0;
+	}
+
+	#rtb-bookings-table .rtb-location-switch {
+		position: absolute;
+		top: 0;
+		right: 0;
+		background: #eee;
+		padding-left: 1em;
+	}
+}
+
+@media screen and (max-width: 782px) {
+
+	/* Prevent date column from being hidden in WP versions < 4.3 */
+	#rtb-bookings-table .fixed .column-date {
+		display: table-cell;
+	}
+
+	/* Always display details data in mobile views */
+	#rtb-bookings-table .column-details .rtb-details-data {
+		display: block;
+	}
+
+	#rtb-bookings-table .column-details .rtb-show-details {
+		display: none;
+	}
+}
+
+/* Add/edit bookings modal */
+.rtb-admin-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: 9999;
+	overflow-y: auto;
+	cursor: pointer;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s 0, visibility 0 0.3s;
+	-moz-transition: opacity 0.3s 0, visibility 0 0.3s;
+	transition: opacity 0.3s 0, visibility 0 0.3s;
+}
+
+.rtb-admin-modal.is-visible {
+	visibility: visible;
+	opacity: 1;
+	-webkit-transition: opacity 0.3s 0, visibility 0 0;
+	-moz-transition: opacity 0.3s 0, visibility 0 0;
+	transition: opacity 0.3s 0, visibility 0 0;
+}
+
+.rtb-admin-modal.is-visible .rtb-container {
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-ms-transform: translateY(0);
+	-o-transform: translateY(0);
+	transform: translateY(0);
+}
+
+.rtb-admin-modal .rtb-container {
+	position: relative;
+	width: 90%;
+	max-width: 20em;
+	padding: 2em;
+	background: #FFF;
+	margin: 3em auto 4em;
+	cursor: auto;
+	border-radius: 0.25em;
+	-webkit-transform: translateY(-30px);
+	-moz-transform: translateY(-30px);
+	-ms-transform: translateY(-30px);
+	-o-transform: translateY(-30px);
+	transform: translateY(-30px);
+	-webkit-transition-property: -webkit-transform;
+	-moz-transition-property: -moz-transform;
+	transition-property: transform;
+	-webkit-transition-duration: 0.3s;
+	-moz-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+}
+
+.rtb-admin-modal fieldset {
+	padding: 0;
+}
+
+.rtb-admin-modal fieldset > div {
+	margin-top: 1em;
+}
+
+.rtb-admin-modal legend {
+	font-size: 1.5em;
+	margin: 0 0 0.83em;
+	font-weight: 400;
+	padding: 0;
+}
+
+.rtb-admin-modal label {
+	color: #777;
+	font-style: italic;
+	display: block;
+}
+
+.rtb-admin-modal .button {
+	margin-top: 1em;
+	margin-right: 0.5em;
+}
+
+.rtb-admin-modal button,
+.rtb-admin-modal .button {
+	opacity: 1;
+	transition: opacity .25s ease-in-out;
+	-moz-transition: opacity .25s ease-in-out;
+	-webkit-transition: opacity .25s ease-in-out;
+}
+
+.rtb-admin-modal button:disabled,
+.rtb-admin-modal .button:disabled {
+	opacity: 0.5;
+	transition: opacity .25s ease-in-out;
+	-moz-transition: opacity .25s ease-in-out;
+	-webkit-transition: opacity .25s ease-in-out;
+}
+
+.rtb-admin-modal .button-link {
+	display: inline-block;
+	margin-top: 1em;
+	line-height: 26px;
+}
+
+.rtb-admin-modal .action-status {
+	display: inline-block;
+	float: right;
+	margin-top: 1em;
+	opacity: 0;
+	transition: opacity .25s ease-in-out;
+	-moz-transition: opacity .25s ease-in-out;
+	-webkit-transition: opacity .25s ease-in-out;
+}
+
+.rtb-admin-modal .action-status.is-visible {
+	opacity: 1;
+}
+
+.rtb-admin-modal .action-status > span {
+	display: none;
+	background-position: 4px;
+	margin: 0;
+	height: 28px;
+	width: 28px;
+	line-height: 28px;
+	font-size: 28px;
+}
+
+.rtb-admin-modal .action-status > .spinner {
+	visibility: visible;
+	display: block;
+}
+
+.rtb-admin-modal .action-status > .success {
+	color: #7ad03a;
+}
+
+.rtb-admin-modal .action-status > .error {
+	color: #dd3d36;
+}
+
+#rtb-booking-form .rtb-error {
+	background: #dd3d36;
+}
+
+#rtb-booking-form .rtb-error a  {
+	color: #fff;
+}
+
+.rtb-admin-modal input[type="text"],
+.rtb-admin-modal input[type="email"],
+.rtb-admin-modal input[type="tel"],
+.rtb-admin-modal textarea {
+	max-width: 100%;
+	width: 100%;
+}
+
+#rtb-email-modal .rtb-email-to {
+	font-weight: 700;
+	color: #777;
+}
+
+#rtb-email-modal textarea {
+	min-height: 12em;
+}
+
+.rtb-description {
+	margin: 0.5em 0;
+	color: #777;
+	max-height: 0;
+	overflow: hidden;
+	-webkit-transition: max-height 0.5s 0;
+	-moz-transition: max-height 0.5s 0;
+	transition: max-height 0.5s 0;
+}
+
+.rtb-description.is-visible {
+	max-height: 20em;
+}
+
+.rtb-column-form ul {
+	margin: 0;
+}
+
+.rtb-column-form label {
+	font-style: normal;
+	padding: 2px 0;
+}
+
+.rtb-column-form fieldset {
+	margin-bottom: 2em;
+}
+
+.rtb-column-form .action-status {
+	margin-top: 0;
+}
+
+#rtb-error-modal .rtb-error-msg {
+	margin-bottom: 1em;
+}
+
+.rtb-ban-form .intro {
+	margin-top: 0;
+	font-weight: bold;
+}
+
+.rtb-ban-form .intro span {
+	color: #a55;
+}
+
+.rtb-ban-form .button-primary {
+	display: block;
+	width: 100%;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+/* Hide the outer scrollbar when the modal is open */
+.rtb-hide-body-scroll {
+	overflow: hidden !important;
+}
+
+/* Settings Pages (most of this is handled by the Simple Admin Pages library) */
+.rtb-template-tags-box {
+	margin-top: 0.5em;
+	padding: 1em;
+	border-left: 4px solid #2ea2cc;
+	background: #fff;
+	-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+}
+.rtb-template-tags-box strong {
+	min-width: 8em;
+	display: inline-block;
+}
+
+/* Addons Page */
+.rtb-addons {
+	margin-top: 2em;
+}
+
+.rtb-addons .addon {
+	display: inline-block;
+	margin-bottom: 20px;
+	padding: 20px;
+	background: #fff;
+	min-height: 150px;
+	border-radius: 3px;
+	max-width: 40em;
+	margin-right: 20px;
+	vertical-align: top;
+}
+
+.rtb-addons img {
+	float: left;
+	width: 150px;
+	height: 150px;
+	margin-right: 20px;
+}
+
+.rtb-addons .action {
+	margin-top: 2em;
+}
+
+.rtb-addons .action .button {
+	margin-right: 0.5em;
+}
+
+.rtb-addons .soon,
+.rtb-addons .installed {
+	line-height: 28px;
+	display: inline-block;
+	padding: 0 0.75em;
+	border-radius: 3px;
+	box-shadow: 0 1px 0 #ccc;
+}
+
+.rtb-addons .soon {
+	background: #F0F05E;
+}
+
+.rtb-addons .installed {
+	background: #81F05E;
+}
+
+.rtb-addons .rtb-by {
+	display: inline-block;
+	font-style: italic;
+	line-height: 28px;
+	color: #777;
+}
+
+.rtb-addons .rtb-by a {
+	margin-left: 0.25em;
+	font-style: normal;
+}
+
+@media screen and (max-width: 600px) {
+
+	.rtb-addons .addon {
+		text-align: center;
+	}
+
+	.rtb-addons img {
+		float: none;
+		margin: 0;
+	}
+}
+
+
+/* License page */
+.rtb-license-setting .status {
+	display: inline-block;
+	padding: 4px;
+	color: #fff;
+}
+
+.rtb-license-setting .status.valid {
+	background: #069106;
+}
+
+.rtb-license-setting .status.inactive {
+	background: #BE0A0A;
+}
